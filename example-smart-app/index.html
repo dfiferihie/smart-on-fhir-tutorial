@@ -25,7 +25,7 @@
           <td id='fname'></td>
         </tr>
         <tr>
-          <th>Last Name0:</th>
+          <th>Last Name:</th>
           <td id='lname'></td>
         </tr>
         <tr>
@@ -60,56 +60,65 @@
           <table class = "dataTable" style ="border:2px solid #9CC3E7;">
             <tr>
               <th></th>
-              <th>Document Info (temp)</th>
               <th>Date</th>
-              <th>Source</th>
+              <th>Hospital</th>
             </tr>
 
             <tr>
-              <!--I turned Systolic BP test into a hyperlink that when pressed, incites script @ bottom to re-extract data, replacing the systolicbp id with systolic bp value-->
-              <td><a id="mylink" href="#">Systolic BP</a></td>
-              <td id='systolicbp'></td>
+              <td>Last EKG</td>
               <td>Date not specified</td>
               <td>Source not specified</td>
             </tr>
 
             <tr>
-              <td>Diastolic BP</td>
-              <td id='diastolicbp'></td>
+              <td>Last Cath. Report</td>
               <td>Date not specified</td>
               <td>Source not specified</td>
             </tr>
 
             <tr>
-              <td>LDL</td>
-              <td id='ldl'></td>
+              <td>Last ECHO</td>
               <td>Date not specified</td>
               <td>Source not specified</td>
             </tr>
 
             <tr>
-              <td>HDL</td>
-              <td id='hdl'></td>
+              <td>Last Cardiology Note</td>
               <td>Date not specified</td>
               <td>Source not specified</td>
             </tr>
 
             <tr>
-              <td>Hosp. D/C Summary</td>
-              <td id='D/C'></td>
+              <td>Last D/C Summary</td>
               <td>Date not specified</td>
               <td>Source not specified</td>
             </tr>
+
+            <!--I turned Systolic BP test into a hyperlink that when pressed, incites script @ bottom to re-extract data, replacing the systolicbp id with systolic bp value-->
+            <tr>
+              <td><a id="SysBPLink" href="#testinformation">Systolic BP</a></td>
+              <!--<td id = 'systolicbpDate'></td> -->
+              <td>Date not specified</td>
+              <td>Source not specified</td>
+            </tr>
+
+            <tr>
+              <td><a id="DiastolicBPLink" href="#testinformation">Diastolic BP</a></td>
+              <td>Date not specified</td>
+              <td>Source not specified</td>
+            </tr>
+
           </table>
         </div>
       
         <div id="right" style = "float:left; width:50%">
-
           <!--I need to figure out how to link the tests to the scroll box so that when the test is clicked, the information will print in the scroll box...
           I could potentially do this by giving info in scroll box an id, and replacing the contents with test results when pressed?-->
-          
+
             <section style="height:350px;width:600px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-              Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data.
+              <div id="testinformation">
+              Scrollbox for data.
+              </div>
             </section>
         </div>
       </div>
@@ -127,38 +136,38 @@
           <div class = "modal-header">
             <span class = "close">&times;</span>
             <h2>Feedback</h2>
-        </div>
+          </div>
           
           <div class = "modal-body">
             <div class = "container">
-            <form action="/action_page.php">
-              <label for="firname">First Name</label>
-              <input type="text" id="firname" name="firstname" placeholder="Your name..">
+              <form action="/action_page.php">
+                <label for="firname">First Name</label>
+                <input type="text" id="firname" name="firstname" placeholder="Your name..">
 
-              <label for="lasname">Last Name</label>
-              <input type="text" id="lasname" name="lastname" placeholder="Your last name..">
+                <label for="lasname">Last Name</label>
+                <input type="text" id="lasname" name="lastname" placeholder="Your last name..">
 
-              <label for="hospital">Hospital</label>
-              <select id="hospital" name="hospital">
-                <option value="Methodist">Methodist</option>
-                <option value="Riley Ray">Riley Ray</option>
-                <option value="Eskenazi Health">Eskenazi Health</option>
-                <option value= "IUHealth"> IU Health</option>
-              </select>
+                <label for="hospital">Hospital</label>
+                <select id="hospital" name="hospital">
+                  <option value="Methodist">Methodist</option>
+                  <option value="Riley Ray">Riley Ray</option>
+                  <option value="Eskenazi Health">Eskenazi Health</option>
+                  <option value= "IUHealth"> IU Health</option>
+                </select>
 
-              <label for="subject">Subject</label>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-              <input type="submit" value="Submit">
-              <span class = "close">&times;</span>
-            </form>
-          </div>
-        </div>
-      </div>
-      </div>
+                <input type="submit" value="Submit">
+                <span class = "close">&times;</span>
+              </form>
+           </div>
+          </div><!--modal-body-->
+        </div><!--modal-content-->
+      </div><!--FeedBack Modal-->
     </div>
     
-    <script>
+  <script>
     // Get the modal
     var modal = document.getElementById('FeedbackModal');
 
@@ -186,21 +195,7 @@
     }
   </script>
   
-  <script>
-    window.onload = function(){ //when the window finishes loading
-      var a = document.getElementById("mylink");//link variable a to my hyperlink
-      
-      a.onclick = function(p){//when the link is pressed, extractData() for patient, then print what I want
 
-        extractData().then(//extract data again
-          function(p){
-          $('#systolicbp').html(p.systolicbp); //switch id "systollic bp" for systoloc bp value
-          $('#diastolicbp').html("p.diastolicbp"); //switch id "diastolicbp" for diastolic bp value
-        }
-        );      
-      }
-    }
-    </script>
     <script src='./lib/es6-shim-0.35.1.min.js'></script>
     <script src='./src/js/example-smart-app.js'></script>
     <script src='./lib/fhir-client-v0.1.11.js'></script>
@@ -223,5 +218,37 @@
         }
       );
     </script>
+
+    <script>//DiastolicBP onClick function (prints DiastolicBP when pressed)
+      //window.onload = function(){ //when the window finishes loading
+        var a = document.getElementById("DiastolicBPLink");//link variable a to my hyperlink
+        
+        a.onclick = function(p){//when the link is pressed, extractData() for patient, then print what I want
+
+          extractData().then(//extract data again
+            function(p){
+            $('#testinformation').html(p.diastolicbp); //switch id "diastolicbp" for diastolic bp value
+            }
+          );      
+        }
+      //}//end of script for DiastolicBP onClick
+    </script>
+
+    <script>//onClick function for showing the Systolic Blood Pressure
+    //window.onload = function(){ //when the window finishes loading
+      var b = document.getElementById("SysBPLink");//link variable b to my hyperlink
+    
+      b.onclick = function(p){//when the link is pressed, extractData() for patient, then print what I want
+
+        extractData().then(//extract data again
+          function(p){
+          $('#testinformation').html(p.systolicbp); //switch id "systolic bp" for systoloc bp value
+          }
+        );      
+      }
+    //}//end of script for SystolicBP onClick
+    </script>
+
+
   </body>
 </html>
