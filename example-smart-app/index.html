@@ -15,9 +15,9 @@
       <div class="bounce2"></div>
       <div class="bounce3"></div>
     </div>
-    <div id='holder' >
-      <h2>Example-SMART-App</h2>
+       <div id='holder' >
 
+<!--HTML FORMATTING FOR WEB PAGE-->
       <h2>Patient Resource</h2>
       <table>
         <tr>
@@ -25,7 +25,7 @@
           <td id='fname'></td>
         </tr>
         <tr>
-          <th>Last Name:</th>
+          <th>Last Name0:</th>
           <td id='lname'></td>
         </tr>
         <tr>
@@ -41,31 +41,166 @@
           <td id='age'></td>
         </tr>
       </table>
-      <h2>Observation Resource</h2>
-      <table>
-        <tr>
-          <th>Height:</th>
-          <td id='height'></td>
-        </tr>
-        <tr>
-          <th>Systolic Blood Pressure:</th>
-          <td id='systolicbp'></td>
-
-        </tr>
-        <tr>
-          <th>Diastolic Blood Pressure:</th>
-          <td id='diastolicbp'></td>
-        </tr>
-        <tr>
-          <th>LDL:</th>
-          <td id='ldl'></td>
-        </tr>
-        <tr>
-          <th>HDL:</th>
-          <td id='hdl'></td>
-        </tr>
-      </table>
     </div>
+
+      <center><div> <!--formatting ofr the CareWeb Plus Img-->
+        <a href="http://imgur.com/6BhK6ge"><img src="http://i.imgur.com/6BhK6ge.png" alt = "CareWeb Plus" style = "width:468px;height:132px;"></a>
+        </div>
+      </center>
+
+
+      <div id = "container" style = "width:100%">
+      <!--I split the Chief Complaint tab w/ Tests and Scroll box into two adjacent 50% divs-->
+        <div id="left" style = "float:left; width:50%">
+         
+          <section class="chiefComplaintTab" style ="border:2px solid #9CC3E7">
+              Chief Complaint: Chest Pain           
+          </section>
+        
+          <table class = "dataTable" style ="border:2px solid #9CC3E7;">
+            <tr>
+              <th></th>
+              <th>Document Info (temp)</th>
+              <th>Date</th>
+              <th>Source</th>
+            </tr>
+
+            <tr>
+              <!--I turned Systolic BP test into a hyperlink that when pressed, incites script @ bottom to re-extract data, replacing the systolicbp id with systolic bp value-->
+              <td><a id="mylink" href="#">Systolic BP</a></td>
+              <td id='systolicbp'></td>
+              <td>Date not specified</td>
+              <td>Source not specified</td>
+            </tr>
+
+            <tr>
+              <td>Diastolic BP</td>
+              <td id='diastolicbp'></td>
+              <td>Date not specified</td>
+              <td>Source not specified</td>
+            </tr>
+
+            <tr>
+              <td>LDL</td>
+              <td id='ldl'></td>
+              <td>Date not specified</td>
+              <td>Source not specified</td>
+            </tr>
+
+            <tr>
+              <td>HDL</td>
+              <td id='hdl'></td>
+              <td>Date not specified</td>
+              <td>Source not specified</td>
+            </tr>
+
+            <tr>
+              <td>Hosp. D/C Summary</td>
+              <td id='D/C'></td>
+              <td>Date not specified</td>
+              <td>Source not specified</td>
+            </tr>
+          </table>
+        </div>
+      
+        <div id="right" style = "float:left; width:50%">
+
+          <!--I need to figure out how to link the tests to the scroll box so that when the test is clicked, the information will print in the scroll box...
+          I could potentially do this by giving info in scroll box an id, and replacing the contents with test results when pressed?-->
+          
+            <section style="height:350px;width:600px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+              Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data. Scroll box for the data.
+            </section>
+        </div>
+      </div>
+   <!-- First Pic
+   <div id="feedback"><a href="http://imgur.com/BNOa2Pn"><img src="http://i.imgur.com/BNOa2Pn.png" title="source: imgur.com" height = "50" width = "65"/></a></div>
+   -->
+   
+   <!-- Experimenting with Feedback Button -->
+    <div>
+      <button id = "feedbackbutton" style = "height:50px;width:100px; font:16px/25px Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', 'serif'">
+      Feedback
+      </button>
+      <div id = "FeedbackModal" class="modal">
+        <div class = "modal-content">
+          <div class = "modal-header">
+            <span class = "close">&times;</span>
+            <h2>Feedback</h2>
+        </div>
+          
+          <div class = "modal-body">
+            <div class = "container">
+            <form action="/action_page.php">
+              <label for="firname">First Name</label>
+              <input type="text" id="firname" name="firstname" placeholder="Your name..">
+
+              <label for="lasname">Last Name</label>
+              <input type="text" id="lasname" name="lastname" placeholder="Your last name..">
+
+              <label for="hospital">Hospital</label>
+              <select id="hospital" name="hospital">
+                <option value="Methodist">Methodist</option>
+                <option value="Riley Ray">Riley Ray</option>
+                <option value="Eskenazi Health">Eskenazi Health</option>
+                <option value= "IUHealth"> IU Health</option>
+              </select>
+
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+              <input type="submit" value="Submit">
+              <span class = "close">&times;</span>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('FeedbackModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("feedbackbutton");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  
+  <script>
+    window.onload = function(){ //when the window finishes loading
+      var a = document.getElementById("mylink");//link variable a to my hyperlink
+      
+      a.onclick = function(p){//when the link is pressed, extractData() for patient, then print what I want
+
+        extractData().then(//extract data again
+          function(p){
+          $('#systolicbp').html(p.systolicbp); //switch id "systollic bp" for systoloc bp value
+          $('#diastolicbp').html("p.diastolicbp"); //switch id "diastolicbp" for diastolic bp value
+        }
+        );      
+      }
+    }
+    </script>
     <script src='./lib/es6-shim-0.35.1.min.js'></script>
     <script src='./src/js/example-smart-app.js'></script>
     <script src='./lib/fhir-client-v0.1.11.js'></script>
