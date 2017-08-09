@@ -13,8 +13,8 @@
       if (smart.hasOwnProperty('patient')) {//if a patient is being handed to the program, do all of the following...
 
         var user = smart.user;
-        log(user);
-        log(user.read());
+        console.log(user);
+        console.log(user.read());
         
         var patient = smart.patient; //stores patient context
         var pt = patient.read();
