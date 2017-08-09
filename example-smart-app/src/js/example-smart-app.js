@@ -47,6 +47,8 @@
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
           }
+          
+          var mrn = patient.identifier[0].value;
 
           var height = byCodes('8302-2'); //getting height using method "byCodes", with LOINC code being used as input 
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');//getting bps...
@@ -66,6 +68,7 @@
           p.gender = gender; //p's gender being put in variable gender
           p.fname = fname; //fname being placed in p's instance variable fname
           p.lname = lname;//lname being placed in p's instance variable lname
+          p.mrn = mrn;
           p.age = parseInt(calculateAge(dob)); //the same applies to the age...
           p.height = getQuantityValueAndUnit(height[0]);//the same applies to the height
 
@@ -112,6 +115,7 @@
       fname: {value: ''},
       lname: {value: ''},
       gender: {value: ''},
+      mrn: {value: ''},
       birthdate: {value: ''},
       age: {value: ''},
       height: {value: ''},
@@ -183,6 +187,7 @@
     $('#fname').html(p.fname);
     $('#lname').html(p.lname);
     $('#gender').html(p.gender);
+    $('#mrn').html(p.mrn);
     $('#birthdate').html(p.birthdate);
     $('#age').html(p.age);
     $('#height').html(p.height);
