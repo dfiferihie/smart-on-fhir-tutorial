@@ -12,6 +12,10 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {//if a patient is being handed to the program, do all of the following...
 
+        var user = smart.user;
+        log(user);
+        log(user.read());
+        
         var patient = smart.patient; //stores patient context
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({//where the patient API's/FHIR resources can be fetched and stored
