@@ -8,6 +8,14 @@
       ret.reject();
     }
 
+    function onLoad(smart) {
+      if (smart.hasOwnProperty('smart_style_url')) {
+          $.get(smart.smart_style_url, function(data) {
+              var style = data;
+              console.log(data);
+          });
+      }
+    }
 
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {//if a patient is being handed to the program, do all of the following...
