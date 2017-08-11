@@ -10,9 +10,12 @@
 
     function onReady(smart)  {
        if (smart.hasOwnProperty('tokenResponse')) {
-          $.getJSON(smart.tokenResponse.smart_style_url, function(data) {
-              var style = data;
-              console.log(data);
+          $.ajax({
+            url: smart.tokenResponse.smart_style_url,
+            type: 'GET',
+            crossDomain: true,
+            dataType: 'jsonp',
+            success: function(data) { console.log(data); }
           });
       }
       
