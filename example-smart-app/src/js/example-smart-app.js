@@ -12,8 +12,8 @@
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {//if a patient is being handed to the program, do all of the following...
 
-        var userId = smart.user.userId;
-        smart.user.userId = userId.slice(smart.server.serviceUrl.length + 1);
+        var userId = smart.userId;
+        smart.userId = userId.slice(smart.server.serviceUrl.length + 1);
         var u = smart.user.read();
         console.log(u);
         console.log(smart.userId);
