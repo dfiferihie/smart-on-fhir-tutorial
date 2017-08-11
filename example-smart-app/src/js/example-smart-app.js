@@ -10,7 +10,7 @@
 
     function onReady(smart)  {
        if (smart.hasOwnProperty('tokenResponse')) {
-          $.get(smart.tokenResponse.smart_style_url, function(data) {
+          $.getJSON(smart.tokenResponse.smart_style_url, function(data) {
               var style = data;
               console.log(data);
           });
