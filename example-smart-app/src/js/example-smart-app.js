@@ -14,7 +14,7 @@
             url: smart.tokenResponse.smart_style_url,
             type: 'GET',
             crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
           }).done(function(data) {
             console.log(data);
           });
