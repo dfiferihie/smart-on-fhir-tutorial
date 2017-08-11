@@ -15,7 +15,8 @@
             type: 'GET',
             crossDomain: true,
             dataType: 'jsonp',
-            success: function(data) { console.log(data); }
+          }).done(function(data) {
+            console.log(data);
           });
       }
       
