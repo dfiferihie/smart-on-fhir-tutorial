@@ -13,11 +13,9 @@
       if (smart.hasOwnProperty('patient')) {//if a patient is being handed to the program, do all of the following...
 
         var user = smart.user;
-        console.log(user);
-        console.log(JSON.stringify(user));
         var u = user.read();
         console.log(u);
-        console.log(JSON.stringify(u));
+        console.log(smart.userId);
         
         var patient = smart.patient; //stores patient context
         var pt = patient.read();
