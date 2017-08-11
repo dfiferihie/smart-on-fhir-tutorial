@@ -9,8 +9,8 @@
     }
 
     function onReady(smart)  {
-       if (smart.hasOwnProperty('token_response')) {
-          $.get(smart.token_response.smart_style_url, function(data) {
+       if (smart.hasOwnProperty('tokenResponse')) {
+          $.get(smart.tokenResponse.smart_style_url, function(data) {
               var style = data;
               console.log(data);
           });
