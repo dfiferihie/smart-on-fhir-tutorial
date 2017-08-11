@@ -14,7 +14,10 @@
 
         var user = smart.user;
         console.log(user);
-        console.log(user.read());
+        console.log(JSON.stringify(user));
+        var u = user.read();
+        console.log(u);
+        console.log(JSON.stringify(u));
         
         var patient = smart.patient; //stores patient context
         var pt = patient.read();
